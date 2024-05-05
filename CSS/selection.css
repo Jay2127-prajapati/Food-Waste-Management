@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Exo 2", sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #2bb882;
+}
+
+
+/* Additional Styles for Glassmorphism Cards */
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Add gap between cards */
+}
+
+.card-link {
+    text-decoration: none;
+}
+
+.card {
+    width: 250px; /* Set width */
+    height: 250px; /* Set height */
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #fff;
+    backdrop-filter: blur(10px);
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card h4 {
+    color: black; /* Change text color to white */
+    margin-top: 10px; /* Add margin to top */
+    font-size: 18px;
+}
+
+.card img {
+    max-width: 100%;
+    max-height: 70%; /* Adjust the image height */
+}
+
+.box-left {
+    margin-right: auto;
+}
+
+.box-mid {
+    margin: 0 auto;
+}
+
+.box-right {
+    margin-left: auto;
+}
+
+
+/* Registration Form CSS */
+
+.container-registration-form {
+    margin: 20px auto; /* Add margin for space above and below */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.student-section-information,
+.university-section-information {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%; /* Set width to 100% */
+    max-width: 600px; /* Set max width */
+}
+
+.university-section-information {
+    margin-top: 20px; /* Add margin to top */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: calc(100% - 24px); /* Adjust width */
+    height: 40px; /* Set height */
+    padding: 10px; /* Adjust padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 24 24' width='24px' height='24px'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v8h-2z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 8px) center;
+    background-size: 24px 24px;
+    padding-right: 30px; /* Add padding for icon */
+}
+
+input[type="file"] {
+    width: calc(100% - 24px); /* Adjust width */
+    padding: 10px; /* Adjust padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+textarea {
+    height: 80px; /* Set height */
+    resize: none;
+}
+
+.radio-group {
+    display: flex;
+    gap: 10px;
+}
+
+.radio-group label {
+    color: #fff;
+}
+
+/* Equalize the width of form fields */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select,
+textarea,
+input[type="file"] {
+    width: 100%; /* Set width to 100% */
+}
+
+/* Equalize the height of form fields */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select,
+textarea,
+input[type="file"] {
+    height: 40px; /* Set height */
+}

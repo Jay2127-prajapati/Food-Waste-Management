@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Composition Registration Form</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="./CSS/foodcomp.css">
+</head>
+<body>
+    <div class="container-registration-form">
+        <div class="student-section-information">
+            <h2 class="form-heading">Food Composition Form</h2>
+
+            <!-- Wrap your form in a <form> tag and specify the action attribute -->
+            <form id="foodCompForm" action="next-page.html" method="POST">
+
+                <div class="form-group">
+                    <label for="foodcomp-name">Food Composition Name:</label>
+                    <input type="text" id="foodcomp-name" name="foodcomp-name" placeholder="Enter Food Composition Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-person">Contact Person Name:</label>
+                    <input type="text" id="contact-person" name="contact-person" placeholder="Enter Your Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone-number">Phone Number:</label>
+                    <input type="tel" id="phone-number" name="phone-number" placeholder="Enter Phone Number">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter Email Address">
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" placeholder="Enter Address"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="website">Website :</label>
+                    <input type="text" id="website" name="website" placeholder="Enter Website URL/Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description :</label>
+                    <textarea id="description" name="description" placeholder="Enter Description Of Your Food Composition"></textarea>
+                </div>
+                
+                <input type="submit" value="Submit" class="submit-button">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle form submission
+        document.getElementById("foodCompForm").addEventListener("submit", function(event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+            
+            // Redirect the user to the next page
+            window.location.href = "dashboard.html";
+        });
+    </script>
+</body>
+</html>
