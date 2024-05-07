@@ -1,0 +1,1 @@
+it's  a html,css,javascript project. which is about ngo. here restrurent can give their foods to Ngo for needed person. or composites to make agriculuture ndded from food. so basically it's a service website. where firebase is used as a backend.
