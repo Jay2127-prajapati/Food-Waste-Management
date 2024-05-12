@@ -153,10 +153,29 @@
             if (snapshot.exists) {
               sessionStorage.setItem("user-info", JSON.stringify({
                 name: snapshot.val().name,
-                contact: snapshot.val().name
+                contact: snapshot.val().contact,
+                address:snapshot.val().address,
+                description:snapshot.val().description,
+                email:snapshot.val().email,
+                orgname:snapshot.val().orgname,
+                ownercontact:snapshot.val().ownercontact,
+                ownername:snapshot.val().ownername,
+                type:snapshot.val().type,
+                url:snapshot.val().url,
               }))
               sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
-              window.location.href = 'home.html';
+              
+              if(snapshot.val().type === "ngo"){
+                window.location.href = './NGO/dashboard.html';
+              }
+              else if(snapshot.val().type === "composition"){
+                window.location.href = './Food Composition/dashboard.html';
+              }
+              else{
+                window.location.href = './NGO/dashboard.html';
+              }
+              
+              
             }
 
           })
