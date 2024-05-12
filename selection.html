@@ -16,51 +16,51 @@
                 <h4>NGO</h4>
             </div>
         </a>
-    
+
         <a class="card-link" value="restaurant" id="restaurant" onclick="generateValue(this.id)">
             <div class="box-mid card">
                 <img src="./assets/img/restruent.svg" alt="">
                 <h4>Restaurant</h4>
             </div>
         </a>
-    
+
         <a class="card-link" value="composition" id="composition" onclick="generateValue(this.id)">
             <div class="box-right card">
                 <img src="./assets/img/food composition.png" alt="">
                 <h4>Food Composition </h4>
             </div>
         </a>
-    
+
         <form id="MainForm">
             <div>
                 <input type="text" class="selection-field" id="selectionvalue" style="display: none;">
             </div>
-    
+
             <div>
                 <button type="submit" class="proceed-btn">Proceed</button>
             </div>
         </form>
     </div>
-    
+
 
     <script>
         function generateValue(id) {
             document.getElementById('selectionvalue').value = id;
         }
-    
 
-    // Function to handle card click
-    document.querySelectorAll('.card-link').forEach(item => {
-        item.addEventListener('click', event => {
-            // Remove border color from all cards
-            document.querySelectorAll('.card').forEach(card => {
-                card.style.borderColor = "transparent"; // Set border color to transparent for all cards
+
+        // Function to handle card click
+        document.querySelectorAll('.card-link').forEach(item => {
+            item.addEventListener('click', event => {
+                // Remove border color from all cards
+                document.querySelectorAll('.card').forEach(card => {
+                    card.style.borderColor = "transparent"; // Set border color to transparent for all cards
+                });
+
+                // Add border color to clicked card
+                event.currentTarget.querySelector('.card').style.borderColor = "blue"; // Set border color to black for clicked card
             });
-
-            // Add border color to clicked card
-            event.currentTarget.querySelector('.card').style.borderColor = "blue"; // Set border color to black for clicked card
         });
-    });
     </script>
 
     <script type="module">
@@ -69,14 +69,13 @@
         import { getDatabase, ref, child, get, update } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
 
         const firebaseConfig = {
-            apiKey: "AIzaSyA7DrMVwr7gg_V5IDgeMf8PGsXL7O1O6ik",
-            authDomain: "food-waste-management-fb700.firebaseapp.com",
-            databaseURL: "https://food-waste-management-fb700-default-rtdb.firebaseio.com",
-            projectId: "food-waste-management-fb700",
-            storageBucket: "food-waste-management-fb700.appspot.com",
-            messagingSenderId: "385689207472",
-            appId: "1:385689207472:web:fd75cae52bc02515553175",
-            measurementId: "G-73M42PBH1L"
+            apiKey: "AIzaSyAnHiUSY34PQIsOqQ3Wp_v03uPlrSB9PM4",
+            authDomain: "food-management-3d92b.firebaseapp.com",
+            projectId: "food-management-3d92b",
+            storageBucket: "food-management-3d92b.appspot.com",
+            messagingSenderId: "824459272757",
+            appId: "1:824459272757:web:3c14e9f469f4f9a3c1877c",
+            measurementId: "G-GNWC6J0PM5"
         };
 
 
@@ -92,7 +91,7 @@
 
 
 
-        function ngo(){
+        function ngo() {
             update(ref(db, 'UserAuthList/' + UserCreds.uid), {
                 type: "ngo",
 
@@ -101,10 +100,10 @@
                 console.log(error);
             });
             console.log("update");
-            
+
         }
 
-        function restaurant(){
+        function restaurant() {
             update(ref(db, 'UserAuthList/' + UserCreds.uid), {
                 type: "restaurant",
 
@@ -115,7 +114,7 @@
             console.log("update");
         }
 
-        function composition(){
+        function composition() {
             update(ref(db, 'UserAuthList/' + UserCreds.uid), {
                 type: "composition",
 
@@ -127,7 +126,7 @@
         }
 
 
-        function transfer(){
+        function transfer() {
             if (selectionvalue.value === "ngo") {
                 window.location.href = "./NGO/ngoform.html";
             }
@@ -137,7 +136,7 @@
 
             else if (selectionvalue.value === "composition") {
                 window.location.href = "./Food Composition/foodcomp.html";
-            } 
+            }
         }
 
         let UpdateData = evt => {
@@ -154,8 +153,8 @@
             }
 
             else if (selectionvalue.value === "composition") {
-               composition();
-               setTimeout(transfer, 2000);
+                composition();
+                setTimeout(transfer, 2000);
             }
             console.log(UserCreds.uid);
             console.log(selectionvalue.value);
