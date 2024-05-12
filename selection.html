@@ -1,43 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glassmorphism Cards</title>
     <link rel="stylesheet" href="./CSS/selection.css">
 </head>
+
 <body>
     <div class="card-container">
-        <a href="./NGO/ngoform.html" class="card-link">
+        <a class="card-link" value="ngo" id="ngo" onclick="generateValue(this.id)">
             <div class="box-left card">
                 <img src="./assets/img/earth.svg" alt="">
                 <h4>NGO</h4>
             </div>
         </a>
     
-        <a href="./Restruent/restruent.html" class="card-link">
+        <a class="card-link" value="restaurant" id="restaurant" onclick="generateValue(this.id)">
             <div class="box-mid card">
                 <img src="./assets/img/restruent.svg" alt="">
                 <h4>Restaurant</h4>
             </div>
         </a>
     
-        <a href="./Food Composition/foodcomp.html" class="card-link">
+        <a class="card-link" value="composition" id="composition" onclick="generateValue(this.id)">
             <div class="box-right card">
                 <img src="./assets/img/food composition.png" alt="">
                 <h4>Food Composition </h4>
             </div>
         </a>
-
-        <!--<a href="timetable.html" class="card-link">
-            <div class="box-right card">
-                <img src="img/study-time.png" alt="">
-                <h4>Add Time-Table Here.</h4>
-            </div>
-        </a>-->
-
-        
-    </div>    
-
     
+        <form id="MainForm">
+            <div>
+                <input type="text" class="selection-field" id="selectionvalue" style="display: none;">
+            </div>
+    
+            <div>
+                <button type="submit" class="proceed-btn">Proceed</button>
+            </div>
+        </form>
+    </div>
+    
+
+    <script>
+        function generateValue(id) {
+            document.getElementById('selectionvalue').value = id;
+        }
+    
+
+    // Function to handle card click
+    document.querySelectorAll('.card-link').forEach(item => {
+        item.addEventListener('click', event => {
+            // Remove border color from all cards
+            document.querySelectorAll('.card').forEach(card => {
+                card.style.borderColor = "transparent"; // Set border color to transparent for all cards
+            });
+
+            // Add border color to clicked card
+            event.currentTarget.querySelector('.card').style.borderColor = "blue"; // Set border color to black for clicked card
+        });
+    });
+    </script>
+
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+        import { getDatabase, ref, child, get, update } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyA7DrMVwr7gg_V5IDgeMf8PGsXL7O1O6ik",
+            authDomain: "food-waste-management-fb700.firebaseapp.com",
+            databaseURL: "https://food-waste-management-fb700-default-rtdb.firebaseio.com",
+            projectId: "food-waste-management-fb700",
+            storageBucket: "food-waste-management-fb700.appspot.com",
+            messagingSenderId: "385689207472",
+            appId: "1:385689207472:web:fd75cae52bc02515553175",
+            measurementId: "G-73M42PBH1L"
+        };
+
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase();
+
+
+        let UserCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+        let UserInfo = JSON.parse(sessionStorage.getItem("user-info"));
+        let MainForm = document.getElementById('MainForm');
+        let selectionvalue = document.getElementById("selectionvalue");
+        let tablename = UserCreds.uid;
+
+
+
+        function ngo(){
+            update(ref(db, 'UserAuthList/' + UserCreds.uid), {
+                type: "ngo",
+
+            }).catch((error) => {
+                alert("something Went Wrong");
+                console.log(error);
+            });
+            console.log("update");
+            
+        }
+
+        function restaurant(){
+            update(ref(db, 'UserAuthList/' + UserCreds.uid), {
+                type: "restaurant",
+
+            }).catch((error) => {
+                alert("something Went Wrong");
+                console.log(error);
+            });
+            console.log("update");
+        }
+
+        function composition(){
+            update(ref(db, 'UserAuthList/' + UserCreds.uid), {
+                type: "composition",
+
+            }).catch((error) => {
+                alert("something Went Wrong");
+                console.log(error);
+            });
+            console.log("update");
+        }
+
+
+        function transfer(){
+            if (selectionvalue.value === "ngo") {
+                window.location.href = "./NGO/ngoform.html";
+            }
+            else if (selectionvalue.value === "restaurant") {
+                window.location.href = "./Restruent/restruent.html";
+            }
+
+            else if (selectionvalue.value === "composition") {
+                window.location.href = "./Food Composition/foodcomp.html";
+            } 
+        }
+
+        let UpdateData = evt => {
+            evt.preventDefault();
+
+
+            if (selectionvalue.value === "ngo") {
+                ngo();
+                setTimeout(transfer, 2000);
+            }
+            else if (selectionvalue.value === "restaurant") {
+                restaurant();
+                setTimeout(transfer, 2000);
+            }
+
+            else if (selectionvalue.value === "composition") {
+               composition();
+               setTimeout(transfer, 2000);
+            }
+            console.log(UserCreds.uid);
+            console.log(selectionvalue.value);
+            console.log(tablename);
+            console.log(UserInfo.name);
+            console.log(UserInfo.contact);
+
+        }
+
+
+        MainForm.addEventListener('submit', UpdateData);
+
+    </script>
+</body>
+
 </html>

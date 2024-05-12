@@ -1,115 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SignIn&SignUp</title>
-    <link rel="stylesheet" type="text/css" href="./CSS/login-signup.css" />
-    <script
-      src="https://kit.fontawesome.com/64d58efce2.js"
-      crossorigin="anonymous"
-    ></script>
-  
-  </head>
-  <body>
-    <div class="container">
-      <div class="forms-container">
-        <div class="signin-signup">
-          <form action="" class="sign-in-form" id="MainForm">
-            <h2 class="title">Sign In</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="email" placeholder="Email" id="email" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" id="password" />
-            </div>
-            <a href="#"><input type="submit" value="Login" class="btn solid"/></a>
 
-            <p class="social-text">Or Sign in with social platforms</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-google"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
-          </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SignIn&SignUp</title>
+  <link rel="stylesheet" type="text/css" href="./CSS/login-signup.css" />
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <form class="sign-in-form" id="MainForm">
+          <h2 class="title">Sign In</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="email" placeholder="Email" id="email" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" id="password" />
+          </div>
+          <a href=""><input type="submit" value="Login" class="btn solid" /></a>
+
+          <p class="social-text">Or Sign in with social platforms</p>
+          <div class="social-media">
+            <a href="#" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-google"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </form>
 
 
-          <form action="" class="sign-up-form" id="userreg">
-            <h2 class="title">Sign Up</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="name" id="name" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" id="regemail"/>
-            </div>
-            <div class="input-field">
-              <i class="fa fa-phone"></i>
-              <input type="number" placeholder="phone_no" id="phone_no" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Confirm Password" id="confirmpass" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" id="regpassword" />
-            </div>
-            <input type="submit" value="Sign Up" class="btn solid" />
+        <form class="sign-up-form" id="userreg">
+          <h2 class="title">Sign Up</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="name" id="name" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" id="regemail" />
+          </div>
+          <div class="input-field">
+            <i class="fa fa-phone"></i>
+            <input type="number" placeholder="phone_no" id="contact" />
+          </div>
 
-            <p class="social-text">Or Sign up with social platforms</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-google"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class="panels-container">
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" id="regpassword" />
+          </div>
+          <input type="submit" value="Sign Up" class="btn solid" />
 
-        <div class="panel left-panel">
-            <div class="content">
-                <h3>New here?</h3>
-                <p style="text-align: justify;">Elevate your knowledge with our dynamic e-learning platform. Explore a wealth of courses tailored to your interests and learning style. Empower yourself to succeed, anytime, anywhere. Join our community of learners today and embark on a journey of continuous growth and discovery.</p>
-
-                <button class="btn transparent" id="sign-up-btn">Sign Up</button>
-            </div>
-            <img src="./assets/img/bg.svg" class="image" alt="">
-        </div>
-
-        <div class="panel right-panel">
-            <div class="content">
-                <h3>One of us?</h3>
-                <p>Unleash the power of your mind, dive deep into knowledge's sea, and let your passion for learning set your spirit free</p>
-                <button class="btn transparent" id="sign-in-btn">Sign In</button>
-            </div>
-            <img src="./assets/img/bg.svg" class="image" alt="">
-        </div>
+          <p class="social-text">Or Sign up with social platforms</p>
+          <div class="social-media">
+            <a href="#" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-google"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </form>
       </div>
     </div>
+    <div class="panels-container">
 
-    <script src="./JS/login-signup.js"></script>
-  </body>
+      <div class="panel left-panel">
+        <div class="content">
+          <h3>New here?</h3>
+          <p style="text-align: justify;">Elevate your knowledge with our dynamic e-learning platform. Explore a wealth
+            of courses tailored to your interests and learning style. Empower yourself to succeed, anytime, anywhere.
+            Join our community of learners today and embark on a journey of continuous growth and discovery.</p>
+
+          <button class="btn transparent" id="sign-up-btn">Sign Up</button>
+        </div>
+        <img src="./assets/img/bg.svg" class="image" alt="">
+      </div>
+
+      <div class="panel right-panel">
+        <div class="content">
+          <h3>One of us?</h3>
+          <p>Unleash the power of your mind, dive deep into knowledge's sea, and let your passion for learning set your
+            spirit free</p>
+          <button class="btn transparent" id="sign-in-btn">Sign In</button>
+        </div>
+        <img src="./assets/img/bg.svg" class="image" alt="">
+      </div>
+    </div>
+  </div>
+
+  <script src="./JS/login-signup.js"></script>
+  <script type="module">
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+    import { getDatabase, get, ref, set, child } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
+    import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyA7DrMVwr7gg_V5IDgeMf8PGsXL7O1O6ik",
+      authDomain: "food-waste-management-fb700.firebaseapp.com",
+      databaseURL: "https://food-waste-management-fb700-default-rtdb.firebaseio.com",
+      projectId: "food-waste-management-fb700",
+      storageBucket: "food-waste-management-fb700.appspot.com",
+      messagingSenderId: "385689207472",
+      appId: "1:385689207472:web:fd75cae52bc02515553175",
+      measurementId: "G-73M42PBH1L"
+    };
+
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase();
+    const auth = getAuth(app);
+    const dbref = ref(db);
+
+    let name = document.getElementById('name');
+    let regemail = document.getElementById('regemail');
+    let email = document.getElementById('email');
+    let contact = document.getElementById('contact');
+    let password = document.getElementById('password');
+    let regpassword = document.getElementById('regpassword');
+    let MainForm = document.getElementById('MainForm');
+    let userreg = document.getElementById('userreg');
+
+    const defaultType = "null";
+
+
+    let SignInUser = evt => {
+      evt.preventDefault();
+
+      signInWithEmailAndPassword(auth, email.value, password.value)
+        .then((credentials) => {
+          get(child(dbref, 'UserAuthList/' + credentials.user.uid)).then((snapshot) => {
+            if (snapshot.exists) {
+              sessionStorage.setItem("user-info", JSON.stringify({
+                name: snapshot.val().name,
+                contact: snapshot.val().name
+              }))
+              sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
+              window.location.href = 'home.html';
+            }
+
+          })
+            .catch((error) => {
+              alert(error.message);
+              console.log(error.code);
+              console.log(error.message);
+            })
+        }
+        )
+    }
+
+
+    let RegisterUser = evt => {
+      evt.preventDefault();
+
+      createUserWithEmailAndPassword(auth, regemail.value, regpassword.value)
+        .then((credentials) => {
+          set(ref(db, 'UserAuthList/' + credentials.user.uid), {
+            name: name.value,
+            contact: contact.value,
+            type: defaultType,
+          })
+          sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
+          sessionStorage.setItem("user-info", JSON.stringify({
+            name: name.value,
+            contact: contact.value,
+            type: defaultType,
+          }))
+          window.location.href = "selection.html"
+        })
+        .catch((error) => {
+          alert(error.message);
+          console.log(error.code);
+          console.log(error.message);
+        })
+    }
+
+    let CheckCred = () => {
+      sessionStorage.removeItem("user-creds");
+      sessionStorage.removeItem("user-info");
+    }
+
+    window.addEventListener('load', CheckCred);
+    MainForm.addEventListener('submit', SignInUser);
+    userreg.addEventListener('submit', RegisterUser);
+  </script>
+</body>
+
 </html>
