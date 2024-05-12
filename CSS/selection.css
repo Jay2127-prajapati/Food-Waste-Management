@@ -15,11 +15,16 @@ body {
 
 
 /* Additional Styles for Glassmorphism Cards */
+.container {
+    position: relative; /* Set position to relative */
+}
+
 .card-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px; /* Add gap between cards */
+    margin-bottom: 20px; /* Add margin at the bottom */
 }
 
 .card-link {
@@ -33,13 +38,15 @@ body {
     overflow: hidden;
     background-color: #fff;
     backdrop-filter: blur(10px);
-    border: 2px solid black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
     transition: all 0.3s ease;
+
+    border: 4px solid transparent; /* Set initial border color */
+    transition: border-color 0.3s;
 }
 
 .card:hover {
@@ -48,7 +55,7 @@ body {
 }
 
 .card h4 {
-    color: black; /* Change text color to white */
+    color: black; /* Change text color to black */
     margin-top: 10px; /* Add margin to top */
     font-size: 18px;
 }
@@ -68,6 +75,31 @@ body {
 
 .box-right {
     margin-left: auto;
+}
+
+
+.proceed-btn {
+    width: 150px; /* Set button width */
+    padding: 10px; /* Adjust button padding */
+    background-color: #0077cc; /* Blue background color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 50px; /* Adjust button position */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.proceed-btn:hover {
+    background-color: #005faa; /* Darker shade on hover */
+}
+
+.selecyion-field{
+    display: none;
 }
 
 
